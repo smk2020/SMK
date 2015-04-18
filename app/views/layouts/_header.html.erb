@@ -16,7 +16,14 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li></li>
+        <li><%= link_to "Shop", "#" %></li>
+        <% if current_user %>
+       
+        <li><%= link_to "Settings", edit_user_registration_path %></li>
+        <li><%= link_to "Logout",  destroy_user_session_path, method: :delete %>
+        <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
