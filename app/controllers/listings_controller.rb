@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   respond_to :html
 
   def index
-    @listings = Listing.all
+    @listings = Listing.where(availability: true)
     respond_with(@listings)
   end
 
